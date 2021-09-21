@@ -1,3 +1,15 @@
 node_modules/
-.cache/
+
+# dotenv environment variables file
+.env
+
+# build folder
 public
+
+# gatsby cache folder
+.cache
+
+# secrets
+.contentful.json
+.env*
+
