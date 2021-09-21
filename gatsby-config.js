@@ -24,14 +24,15 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
-      // {
-      //   accessToken: "wMmWf0_njM6DNlVgWAcPJ_T0ITH98lAZ6-9sO6bGM0g",
-      //   spaceId: "5ht3rhkq1k41",
-      // },
     },
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-plugin-top-layout",
+    "gatsby-plugin-react-helmet",
+    // If you want to use styled components you should add the plugin here.
+    // 'gatsby-plugin-styled-components',
+    "gatsby-plugin-mui-emotion",
     {
       resolve: "gatsby-source-filesystem",
       options: {
