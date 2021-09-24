@@ -30,6 +30,7 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-top-layout",
     "gatsby-plugin-react-helmet",
+    `gatsby-transformer-inline-svg`,
     // If you want to use styled components you should add the plugin here.
     // 'gatsby-plugin-styled-components',
     "gatsby-plugin-mui-emotion",

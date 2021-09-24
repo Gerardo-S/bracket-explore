@@ -4,46 +4,20 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import MenuButton from "./menuButton";
-// import Menu from "@mui/material/Menu";
-// import MenuItem from "@mui/material/MenuItem";
-// import Fade from "@mui/material/Fade";
 import { useMediaQuery, useTheme } from "@mui/material";
+import NavContent from "./navContent";
+import Logo from "./logo";
 
-const navContent = (
-  <Box sx={{ display: "flex", ml: 2, pl: 2 }}>
-    <Typography variant="h6" component="div" sx={{ mr: "32px" }}>
-      What's included?
-    </Typography>
-    <Typography variant="h6" component="div" sx={{ mr: "32px" }}>
-      Pricing
-    </Typography>
-    <Typography variant="h6" component="div" sx={{ mr: "32px" }}>
-      Sign In
-    </Typography>
-    <Button
-      color="inherit"
-      variant="contained"
-      sx={{
-        mr: 2,
-        height: "40px",
-        width: "141px",
-        padding: 2,
-        backgroundColor: "#0063cc",
-        "&:hover": {
-          backgroundColor: "#6188c7",
-          borderColor: "#0062cc",
-          boxShadow: "none",
-        },
-      }}
-    >
-      Get Started
-    </Button>
-  </Box>
-);
+export default function NavBar(props) {
+  const { data } = props;
+  const navLink1 = data.allContentfulHeader.edges[0].node.header;
+  const navLink2 = data.allContentfulHeader.edges[0].node.navItem2;
+  const navLink3 = data.allContentfulHeader.edges[0].node.navItem3;
+  const navBttn = data.allContentfulHeader.edges[0].node.navButton;
+  const logoData = data.allContentfulHeader.edges[0].node.logo;
 
-export default function NavBar() {
+  const dataArray = [navLink1, navLink2, navLink3, navBttn];
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
   const [anchorEl, setAnchorEl] = useState(null);
@@ -68,7 +42,7 @@ export default function NavBar() {
           }}
         >
           <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-            Brackets
+            <Logo logoData={logoData} />
           </Typography>
           {isMatch ? (
             <MenuButton
@@ -76,9 +50,10 @@ export default function NavBar() {
               onClick={handleClick}
               onClose={handleClose}
               anchorEl={anchorEl}
+              text={dataArray}
             />
           ) : (
-            navContent
+            <NavContent dataArray={dataArray} />
           )}
         </Toolbar>
       </AppBar>

@@ -6,26 +6,46 @@ const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulHeader {
-        nodes {
-          logo {
-            file {
-              fileName
-              url
+        edges {
+          node {
+            logo {
+              svg {
+                content
+                originalContent
+                dataURI
+                absolutePath
+                relativePath
+              }
+              file {
+                contentType
+                url
+                fileName
+                details {
+                  image {
+                    height
+                    width
+                  }
+                }
+              }
+              fluid {
+                base64
+                tracedSVG
+                srcWebp
+                srcSetWebp
+              }
             }
+            header
+            navItem2
+            navItem3
+            navButton
           }
-          header
-          navItem2
-          navItem3
-          navButton
         }
       }
     }
   `);
-  // object containing contentful media
-  // console.log(data.allContentfulHeader.nodes[0]);
   return (
     <div>
-      <NavBar />
+      <NavBar data={data} />
       <main>{children}</main>
     </div>
   );
