@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import NavBar from "./navBar";
+import NavBar from "./navBar/navBar";
+import theme from "../theme";
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
@@ -44,7 +44,12 @@ const Layout = ({ children }) => {
     }
   `);
   return (
-    <div>
+    <div
+      style={{
+        background: theme.palette.primary.mainGradient,
+        height: "100vh",
+      }}
+    >
       <NavBar data={data} />
       <main>{children}</main>
     </div>
