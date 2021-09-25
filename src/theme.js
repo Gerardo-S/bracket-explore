@@ -15,7 +15,7 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "rgba(255, 255, 255, 1)",
-      mainGradient: "linear-gradient(to  top right, black 50%, white )",
+      mainGradient: "linear-gradient(to  top right, black 45%, white )",
       sencondaryGradient:
         "linear-gradient(to  bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0))",
     },
