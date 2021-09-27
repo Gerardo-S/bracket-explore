@@ -2,6 +2,8 @@ import * as React from "react";
 import Layout from "../components/layout";
 import { useTheme } from "@mui/material";
 import { graphql } from "gatsby";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
 const IndexPage = ({ data }) => {
   const heroImg = data.allContentfulHero.nodes[0].backgroundImg;
 
@@ -14,16 +16,35 @@ const IndexPage = ({ data }) => {
   const primaryTextColor = theme.palette.primary.main;
   return (
     <Layout backgroundImg={heroImg}>
-      <main style={{ color: primaryTextColor }}>
+      <main
+        style={{
+          color: primaryTextColor,
+          backgroundColor:
+            "linear-gradient(360deg, rgba(0,0,0) 14%, rgba(255,0,0,0) 108%)",
+          height: "100%",
+          width: "100%",
+        }}
+      >
         <title>Brackets</title>
-        <h1>
-          America's #1 Rated Adventure Platform
-          <br />
-        </h1>
+        <Box
+          sx={{
+            mx: "auto",
+            width: "73%",
+          }}
+        >
+          <h1>
+            America's #1 Rated Adventure Platform
+            <br />
+          </h1>
+        </Box>
       </main>
     </Layout>
   );
 };
+// backgroundColor:
+//   "linear-gradient(360deg, rgba(0,0,0) 14%, rgba(255,0,0,0) 108%)",
+// height: "90vh",
+// width: "100%",
 
 export const query = graphql`
   query {
