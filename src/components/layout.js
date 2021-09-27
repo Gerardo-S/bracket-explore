@@ -51,7 +51,7 @@ const Layout = ({ backgroundImg, children }) => {
     <>
       <BackgroundImage
         style={{
-          height: "100%",
+          height: "100vh",
           width: "100%",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -61,17 +61,13 @@ const Layout = ({ backgroundImg, children }) => {
       >
         <div
           style={{
-            background: theme.palette.primary.mainGradient,
-            height: "100vh",
-            width: "100%",
-            mixBlendMode: "overlay",
+            backgroundColor: theme.palette.primary.mainGradient,
           }}
-        ></div>
+        >
+          <NavBar data={data} />
+          <main>{children}</main>
+        </div>
       </BackgroundImage>
-      <div style={{ position: "absolute", top: 0, width: "100%" }}>
-        <NavBar data={data} />
-        <main>{children}</main>
-      </div>
     </>
   );
 };
