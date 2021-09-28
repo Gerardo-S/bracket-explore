@@ -22,11 +22,7 @@ export default function NavContent(props) {
   return (
     <Box sx={{ display: "flex", ml: 2, pl: 2 }}>
       {navItems}
-      <PageButton
-        btnText={dataArray[dataArray.length - 1]}
-        btnColor={"#0063cc"}
-        btnWidth={"141px"}
-      />
+      <PageButton btnText={dataArray[dataArray.length - 1]} />
     </Box>
   );
 }

@@ -2,8 +2,14 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import { useTheme } from "@mui/material";
 
-export default function PageButton({ btnText, btnColor, btnWidth }) {
+export default function PageButton({
+  btnText,
+  btnColor,
+  btnWidth,
+  btnBgColor,
+}) {
   const theme = useTheme();
+
   return (
     <Button
       variant="contained"
@@ -11,11 +17,11 @@ export default function PageButton({ btnText, btnColor, btnWidth }) {
         color: theme.palette.primary.main,
         mr: 2,
         height: "40px",
-        width: btnWidth,
+        width: btnWidth === undefined ? "141px" : btnWidth,
         padding: 2,
-        backgroundColor: btnColor,
+        backgroundColor: btnColor === undefined ? "#0063cc" : btnColor,
         "&:hover": {
-          backgroundColor: "#6188c7",
+          backgroundColor: btnBgColor === undefined ? "#6188c7" : btnBgColor,
           borderColor: "#0062cc",
           boxShadow: "none",
         },
