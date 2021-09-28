@@ -2,11 +2,10 @@ import * as React from "react";
 import Layout from "../components/layout";
 import { useTheme } from "@mui/material";
 import { graphql } from "gatsby";
-import BackgroundImage from "gatsby-background-image";
 import Box from "@mui/material/Box";
+import HeroImg from "../components/heroImg";
 const IndexPage = ({ data }) => {
   const heroImg = data.allContentfulHero.nodes[0].backgroundImg;
-
   const theme = useTheme();
   const primaryTextColor = theme.palette.primary.main;
   const fluidImg = heroImg.fluid;
@@ -34,21 +33,10 @@ const IndexPage = ({ data }) => {
           </h1>
           <h2>Take control of your weekends</h2>
           <h3>Find adventure anywhere</h3>
+          <Box></Box>
         </Box>
       </main>
-      <BackgroundImage
-        fadeIn
-        fluid={fluidImg}
-        style={{
-          height: "100vh",
-          width: "100%",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          position: "absolute",
-          top: "-66px",
-          zIndex: "-1",
-        }}
-      ></BackgroundImage>
+      <HeroImg fluid={fluidImg} />
     </Layout>
   );
 };
