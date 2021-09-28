@@ -9,7 +9,13 @@ export default function Logo({ logoData }) {
     }
 
     // SVGs that can/should not be inlined
-    return <img src={logoData.file.url} alt={logoData.file.fileName} />;
+    return (
+      <img
+        style={{ height: "24px", width: "124px" }}
+        src={logoData.file.url}
+        alt={logoData.file.fileName}
+      />
+    );
   }
 
   // Non SVG images
