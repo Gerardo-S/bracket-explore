@@ -4,6 +4,7 @@ import { useTheme } from "@mui/material";
 import { graphql } from "gatsby";
 import Box from "@mui/material/Box";
 import HeroImg from "../components/heroImg";
+import PageButton from "../components/pageButton";
 const IndexPage = ({ data }) => {
   const heroImg = data.allContentfulHero.nodes[0].backgroundImg;
   const theme = useTheme();
@@ -33,7 +34,15 @@ const IndexPage = ({ data }) => {
           </h1>
           <h2>Take control of your weekends</h2>
           <h3>Find adventure anywhere</h3>
-          <Box></Box>
+          <Box>
+            <PageButton btnText={"Get Started >"} />
+            <PageButton
+              btnText={"Request a demo >"}
+              btnWidth={"174px"}
+              btnColor={"#767D84"}
+              btnBgColor={"#b0bec5"}
+            />
+          </Box>
         </Box>
       </main>
       <HeroImg fluid={fluidImg} />
