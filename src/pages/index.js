@@ -12,6 +12,7 @@ const IndexPage = ({ data }) => {
   const fluidImg = heroImg.fluid;
   return (
     <Layout>
+      <title>Brackets</title>
       <main
         style={{
           color: primaryTextColor,
@@ -21,7 +22,6 @@ const IndexPage = ({ data }) => {
           width: "100%",
         }}
       >
-        <title>Brackets</title>
         <Box
           sx={{
             mx: "auto",
