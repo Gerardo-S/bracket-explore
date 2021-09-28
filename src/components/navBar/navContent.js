@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import NavButton from "./navButton";
+import PageButton from "../pageButton";
 
 export default function NavContent(props) {
   const { dataArray, theme } = props;
@@ -22,7 +22,11 @@ export default function NavContent(props) {
   return (
     <Box sx={{ display: "flex", ml: 2, pl: 2 }}>
       {navItems}
-      <NavButton btnText={dataArray[dataArray.length - 1]} />
+      <PageButton
+        btnText={dataArray[dataArray.length - 1]}
+        btnColor={"#0063cc"}
+        btnWidth={"141px"}
+      />
     </Box>
   );
 }
