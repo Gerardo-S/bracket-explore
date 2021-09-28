@@ -10,7 +10,7 @@ const HomePageLayout = ({ children, fluid, primaryTextColor }) => {
           color: primaryTextColor,
           background:
             "linear-gradient(360deg, rgba(0,0,0) 14%, rgba(255,0,0,0) 108%)",
-          height: "95vh",
+          height: "100vh",
           width: "100%",
         }}
       >
