@@ -1,9 +1,8 @@
 import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import BackgroundImage from "gatsby-background-image";
 import NavBar from "./navBar/navBar";
-import theme from "../theme";
-const Layout = ({ backgroundImg, children }) => {
+
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulHeader {
@@ -45,30 +44,16 @@ const Layout = ({ backgroundImg, children }) => {
     }
   `);
 
-  const fluidImg = backgroundImg.fluid;
-
   return (
-    <>
-      <BackgroundImage
-        style={{
-          height: "100vh",
-          width: "100%",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-        }}
-        fadeIn
-        fluid={fluidImg}
-      >
-        <div
-          style={{
-            backgroundColor: theme.palette.primary.mainGradient,
-          }}
-        >
-          <NavBar data={data} />
-          <main>{children}</main>
-        </div>
-      </BackgroundImage>
-    </>
+    <div
+      style={{
+        background:
+          "linear-gradient(90deg, rgba(0,0,1) 20%, rgba(0,0,0,0) 100%)",
+      }}
+    >
+      <NavBar data={data} />
+      <main>{children}</main>
+    </div>
   );
 };
 

@@ -2,26 +2,22 @@ import * as React from "react";
 import Layout from "../components/layout";
 import { useTheme } from "@mui/material";
 import { graphql } from "gatsby";
+import BackgroundImage from "gatsby-background-image";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
 const IndexPage = ({ data }) => {
   const heroImg = data.allContentfulHero.nodes[0].backgroundImg;
 
-  // WIP:queries below to be used
-  // const pageTitles = data.allContentfulPageTitles.edges[0].node;
-  // const products = data.allContentfulProduct.nodes;
-  // const pagebuttons = data.allContentfulButton.nodes;
-
   const theme = useTheme();
   const primaryTextColor = theme.palette.primary.main;
+  const fluidImg = heroImg.fluid;
   return (
-    <Layout backgroundImg={heroImg}>
+    <Layout>
       <main
         style={{
           color: primaryTextColor,
-          backgroundColor:
+          background:
             "linear-gradient(360deg, rgba(0,0,0) 14%, rgba(255,0,0,0) 108%)",
-          height: "100%",
+          height: "95vh",
           width: "100%",
         }}
       >
@@ -36,15 +32,26 @@ const IndexPage = ({ data }) => {
             America's #1 Rated Adventure Platform
             <br />
           </h1>
+          <h2>Take control of your weekends</h2>
+          <h3>Find adventure anywhere</h3>
         </Box>
       </main>
+      <BackgroundImage
+        fadeIn
+        fluid={fluidImg}
+        style={{
+          height: "100vh",
+          width: "100%",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          position: "absolute",
+          top: "-66px",
+          zIndex: "-1",
+        }}
+      ></BackgroundImage>
     </Layout>
   );
 };
-// backgroundColor:
-//   "linear-gradient(360deg, rgba(0,0,0) 14%, rgba(255,0,0,0) 108%)",
-// height: "90vh",
-// width: "100%",
 
 export const query = graphql`
   query {
