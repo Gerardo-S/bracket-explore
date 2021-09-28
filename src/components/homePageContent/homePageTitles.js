@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Typography } from "@mui/material";
 const HomePageTitles = ({ pageTitles }) => {
-  console.log(pageTitles);
   return (
     <>
       <Typography sx={{ mb: "16px" }} variant="subtitle1">
