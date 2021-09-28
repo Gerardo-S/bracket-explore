@@ -7,6 +7,7 @@ export default function PageButton({
   btnColor,
   btnWidth,
   btnBgColor,
+  marginTop,
 }) {
   const theme = useTheme();
 
@@ -16,6 +17,7 @@ export default function PageButton({
       sx={{
         color: theme.palette.primary.main,
         mr: 2,
+        mt: marginTop === undefined ? 0 : marginTop,
         height: "40px",
         width: btnWidth === undefined ? "141px" : btnWidth,
         padding: 2,

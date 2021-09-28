@@ -1,6 +1,6 @@
 import * as React from "react";
 import Layout from "../components/layout";
-import { useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import { graphql } from "gatsby";
 import Box from "@mui/material/Box";
 import HeroImg from "../components/heroImg";
@@ -8,6 +8,7 @@ import PageButton from "../components/pageButton";
 const IndexPage = ({ data }) => {
   const heroImg = data.allContentfulHero.nodes[0].backgroundImg;
   const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down("sm"));
   const primaryTextColor = theme.palette.primary.main;
   const fluidImg = heroImg.fluid;
   return (
@@ -41,6 +42,7 @@ const IndexPage = ({ data }) => {
               btnWidth={"174px"}
               btnColor={"#767D84"}
               btnBgColor={"#b0bec5"}
+              marginTop={isMatch ? 2 : undefined}
             />
           </Box>
         </Box>
