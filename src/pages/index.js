@@ -8,6 +8,7 @@ import HomePageLayout from "../components/homePageContent/homePageLayout";
 import HomePageTitles from "../components/homePageContent/homePageTitles";
 const IndexPage = ({ data }) => {
   const heroImg = data.allContentfulHero.nodes[0].backgroundImg;
+  const pageTitles = data.allContentfulPageTitles.edges[0].node;
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("sm"));
   const primaryTextColor = theme.palette.primary.main;
@@ -15,7 +16,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <HomePageLayout fluid={fluidImg} primaryTextColor={primaryTextColor}>
-        <HomePageTitles />
+        <HomePageTitles pageTitles={pageTitles} />
         <Box>
           <PageButton btnText={"Get Started >"} />
           <PageButton

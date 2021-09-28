@@ -1,17 +1,18 @@
 import * as React from "react";
 import { Typography } from "@mui/material";
-const HomePageTitles = () => {
+const HomePageTitles = ({ pageTitles }) => {
+  console.log(pageTitles);
   return (
     <>
       <Typography sx={{ mb: "16px" }} variant="subtitle1">
-        America's #1 Rated Adventure Platform
+        {pageTitles.subTitleH5}
       </Typography>
 
       <Typography sx={{ maxWidth: "470px" }} variant="subtitle2">
-        Take control of your weekends
+        {pageTitles.titleH1}
       </Typography>
       <Typography variant="body1" sx={{ mt: "24px", mb: "28px" }}>
-        Find adventure anywhere
+        {pageTitles.bodyText}
       </Typography>
     </>
   );
