@@ -6,10 +6,11 @@ const HeroImg = ({ fluid }) => {
       fadeIn
       fluid={fluid}
       style={{
-        height: "100vh",
+        height: "100%",
         width: "100%",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
         position: "absolute",
         top: "-66px",
         zIndex: "-1",
