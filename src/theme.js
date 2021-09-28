@@ -18,7 +18,6 @@ const theme = createTheme({
       main: "rgba(255, 255, 255, 1)",
       mainGradient:
         "linear-gradient(90deg, rgba(0,0,0) 20%, rgba(0,0,0,0) 100%)",
-      // "linear-gradient(to  top right, black 45%, white )",
       sencondaryGradient:
         "linear-gradient(180deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,0) 100%)",
     },
@@ -34,6 +33,10 @@ const theme = createTheme({
 
     error: {
       main: red.A400,
+    },
+
+    productBox: {
+      main: "#FFFFFF",
     },
   },
   typography: {
