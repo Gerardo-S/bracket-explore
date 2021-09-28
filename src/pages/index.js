@@ -3,8 +3,9 @@ import Layout from "../components/layout";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { graphql } from "gatsby";
 import Box from "@mui/material/Box";
-import HeroImg from "../components/heroImg";
 import PageButton from "../components/pageButton";
+import HomePageLayout from "../components/homePageContent/homePageLayout";
+import HomePageTitles from "../components/homePageContent/homePageTitles";
 const IndexPage = ({ data }) => {
   const heroImg = data.allContentfulHero.nodes[0].backgroundImg;
   const theme = useTheme();
@@ -13,41 +14,31 @@ const IndexPage = ({ data }) => {
   const fluidImg = heroImg.fluid;
   return (
     <Layout>
-      <title>Brackets</title>
-      <main
-        style={{
-          color: primaryTextColor,
-          background:
-            "linear-gradient(360deg, rgba(0,0,0) 14%, rgba(255,0,0,0) 108%)",
-          height: "95vh",
-          width: "100%",
-        }}
-      >
+      <HomePageLayout fluid={fluidImg} primaryTextColor={primaryTextColor}>
+        <HomePageTitles />
+        <Box>
+          <PageButton btnText={"Get Started >"} />
+          <PageButton
+            btnText={"Request a demo >"}
+            btnWidth={"174px"}
+            btnColor={"#767D84"}
+            btnBgColor={"#b0bec5"}
+            marginTop={isMatch ? 2 : undefined}
+          />
+        </Box>
         <Box
           sx={{
-            mx: "auto",
-            width: "73%",
+            width: 396,
+            height: 312,
+            mt: "40px",
+            backgroundColor: "primary.dark",
+            "&:hover": {
+              backgroundColor: "primary.main",
+              opacity: [0.9, 0.8, 0.7],
+            },
           }}
-        >
-          <h1>
-            America's #1 Rated Adventure Platform
-            <br />
-          </h1>
-          <h2>Take control of your weekends</h2>
-          <h3>Find adventure anywhere</h3>
-          <Box>
-            <PageButton btnText={"Get Started >"} />
-            <PageButton
-              btnText={"Request a demo >"}
-              btnWidth={"174px"}
-              btnColor={"#767D84"}
-              btnBgColor={"#b0bec5"}
-              marginTop={isMatch ? 2 : undefined}
-            />
-          </Box>
-        </Box>
-      </main>
-      <HeroImg fluid={fluidImg} />
+        />
+      </HomePageLayout>
     </Layout>
   );
 };
