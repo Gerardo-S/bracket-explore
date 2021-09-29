@@ -52,6 +52,15 @@ const theme = createTheme({
       fontSize: 18,
       fontWeight: 400,
     },
+    body2: {
+      fontSize: 14.4,
+      fontWeight: 400,
+    },
+    h6: {
+      fontSize: 14.4,
+      fontWeight: 700,
+      color: "rgba(246, 89, 40, 1)",
+    },
   },
 });
 
