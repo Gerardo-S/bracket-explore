@@ -1,5 +1,5 @@
 import * as React from "react";
-import HeroImg from "../heroImg";
+import HeroImg from "./heroImg";
 import Box from "@mui/material/Box";
 const HomePageLayout = ({ children, fluid, primaryTextColor }) => {
   return (
