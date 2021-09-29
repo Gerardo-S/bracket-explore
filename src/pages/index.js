@@ -13,6 +13,7 @@ const IndexPage = ({ data }) => {
   const pageTitles = data.allContentfulPageTitles.edges[0].node;
   const btnText1 = data.allContentfulButton.nodes[1].title;
   const btnText2 = data.allContentfulButton.nodes[0].title;
+  const productDetails = data.allContentfulProduct.nodes;
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("sm"));
   const primaryTextColor = theme.palette.primary.main;
@@ -32,7 +33,7 @@ const IndexPage = ({ data }) => {
             marginTop={isMatch ? 2 : undefined}
           />
         </Box>
-        <ProductBody isMatch={isMatch} />
+        <ProductBody isMatch={isMatch} data={productDetails} />
       </HomePageLayout>
     </Layout>
   );
@@ -106,6 +107,8 @@ export const query = graphql`
             }
             url
           }
+          id
+          gatsbyImageData(placeholder: DOMINANT_COLOR, width: 188, quality: 90)
         }
       }
     }
