@@ -12,7 +12,14 @@ export default function NavContent(props) {
         key={text}
         variant="h6"
         component="div"
-        sx={{ mr: "32px", color: theme.palette.primary.main }}
+        sx={{
+          mr: "32px",
+          color: theme.palette.primary.main,
+          "&:hover": {
+            cursor: "pointer",
+            color: "rgba(246, 89, 40, 1)",
+          },
+        }}
       >
         {text}
       </Typography>
