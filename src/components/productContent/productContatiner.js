@@ -7,7 +7,6 @@ const ProductContainer = ({ children }) => {
       sx={{
         width: "100%",
         height: 312,
-        backgroundColor: "primary.dark",
         display: "flex",
         flexWrap: "wrap",
       }}
