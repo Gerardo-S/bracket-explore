@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 const HomePageLayout = ({ children, fluid, primaryTextColor }) => {
   return (
     <>
-      <title>Brackets</title>
       <main
         style={{
           color: primaryTextColor,
