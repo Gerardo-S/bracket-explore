@@ -22,6 +22,6 @@ npm run develop | gatsby develop
 
 ## Demo of Application
 
-<img src="src\images\demo.gif" alt="Brackets Landing Page">
+<img src="./src/images/thumbnail.png" alt="Brackets Landing Page">
 
 Deployed Link: <a href="https://bracketexploremain.gatsbyjs.io/">https://bracketexploremain.gatsbyjs.io/</a>
