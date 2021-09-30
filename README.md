@@ -1,5 +1,3 @@
-Deployed Link: <a href="https://bracketexploremain.gatsbyjs.io/">https://bracketexploremain.gatsbyjs.io/</a>
-
 # Brackets
 
 ## Description
@@ -25,3 +23,5 @@ npm run develop | gatsby develop
 ## Demo of Application
 
 <img src="src\images\demo.gif" alt="Brackets Landing Page">
+
+Deployed Link: <a href="https://bracketexploremain.gatsbyjs.io/">https://bracketexploremain.gatsbyjs.io/</a>
