@@ -2,7 +2,7 @@ import * as React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import NavBar from "./navBar/navBar";
 import { Helmet } from "react-helmet";
-import OgImg from "../images/thumbnail.png";
+import OgImg from "../images/homepage.png";
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
